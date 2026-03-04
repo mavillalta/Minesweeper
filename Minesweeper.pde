@@ -26,9 +26,9 @@ for(int i=0;i<mine;i++){
 }
 for(int i=0;i<22;i++){
   for(int j=0;j<22;j++){
-   print(grid[i][j]); 
+   
   }
-  System.out.println(" ");
+
 }
 for(int i=0;i<20;i++){
  for(int j=0;j<20;j++){
@@ -44,10 +44,9 @@ for(int i=0;i<20;i++){
 }
 for(int i=0;i<20;i++){
   for(int j=0;j<20;j++){
-   print(nums[i][j]); 
-   print(" ");
+   
   }
-  System.out.println(" ");
+  
 }
 }
 void draw(){
@@ -72,7 +71,7 @@ void mouseClicked() {
   //System.out.println(" "+nums[mouseY/25][mouseX/25]);
  if(nums[mouseX/25][mouseY/25]==9){
    text("game Over",100,100);
-   print("game over");
+   
    //revealmines();
    fill(0,0,0);
    circle( (mouseX/25)*25+10,(mouseY/25)*25+10,10);
@@ -80,9 +79,9 @@ void mouseClicked() {
  else{
    if(nums[mouseX/25][mouseY/25]!=0){
      if(open[mouseX/25][mouseY/25]){
-       print("cord");
+       
        if(flagsum(mouseX/25,mouseY/25)==nums[mouseX/25][mouseY/25]){
-         print("should cord");
+         
          for(int i=mouseX/25-1;i<mouseX/25+2;i++){
             for(int j=mouseY/25-1;j<mouseY/25+2;j++){
               if(isValid(i,j)&&!flags[i][j]){
@@ -116,16 +115,14 @@ else{
       rect((mouseX/25)*25,(mouseY/25)*25,25,25);
       fill(0,255,0);
       text("F",(mouseX/25)*25+10,(mouseY/25)*25+17);
-      print("flag");
+     
       flags[mouseX/25][mouseY/25]=true;
       flag++;
       if(nums[mouseX/25][mouseY/25]==9){
        gflag++;
-       print("good flag");
-       print(gflag);
-       print(flag);
+       
        if(gflag==flag&&gflag==50){
-        print("you won"); 
+         
         textSize(100);
         text("good job",100,100);
        }
@@ -137,12 +134,12 @@ else{
   open[mouseX/25][mouseY/25]=false;
       fill(170,170,170);
       rect((mouseX/25)*25,(mouseY/25)*25,25,25);
-      print("unflag");
+      
       flags[mouseX/25][mouseY/25]=false;
       flag--;
       if(nums[mouseX/25][mouseY/25]==9){
        gflag--;
-       print("ungood flag");
+       
       }
 }
 }
@@ -198,12 +195,12 @@ void expandf(int x,int y){
     rect((x)*25,(y)*25,25,25);
     fill(255,255,255);
     text(nums[x][y],x*25+10,y*25+18);
-    print("red");
+    
     open[x][y]=true; 
  }
  else if(isValid(x,y)&&nums[x][y]==9){
    text("game Over",100,100);
-   print("game over");
+   
    //revealmines();
    fill(0,0,0);
    circle( (x)*25+10,(y)*25+10,10);
