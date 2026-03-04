@@ -24,12 +24,6 @@ while(mines.size()<mine){
 for(int i=0;i<mine;i++){
    grid[mines.get(i)%20+1][mines.get(i)/20+1]=-1;
 }
-for(int i=0;i<22;i++){
-  for(int j=0;j<22;j++){
-   
-  }
-
-}
 for(int i=0;i<20;i++){
  for(int j=0;j<20;j++){
    if(grid[i+1][j+1]==-1){
@@ -42,27 +36,22 @@ for(int i=0;i<20;i++){
    }
  }
 }
-for(int i=0;i<20;i++){
-  for(int j=0;j<20;j++){
-   
-  }
-  
+
 }
-}
+
 void draw(){
 for(int i=0;i<521;i=i+25){
   line(0,i,521,i);
   line(i,0,i,521);
 }
 for(int i=0;i<400;i++){
-  if(nums[i%20][i/20]!=0&&nums[i%20][i/20]!=9)
- ///text(nums[i%20][i/20],(i/20)*25+13,(i%20)*25+25);
  if(nums[i%20][i/20]==9){
    fill(0,0,0);
   ellipse( (i/20)*25+10,(i%20)*25+10,10,10);
  }
 }
 }
+
 void mouseClicked() {
  if(mouseButton==LEFT){
    if(!flags[mouseX/25][mouseY/25]){
