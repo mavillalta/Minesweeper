@@ -131,7 +131,7 @@ else{
       }
 }
 }
-}
+
 int flagsum(int x, int y){
   int f=0;
   for(int i=x-1;i<x+2;i++){
