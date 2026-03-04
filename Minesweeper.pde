@@ -87,7 +87,7 @@ void mouseClicked() {
             for(int j=mouseY/25-1;j<mouseY/25+2;j++){
               if(isValid(i,j)&&!flags[i][j]){
                 
-                expand(i,j);
+                expandf(i,j);
               }
             }
          }
@@ -103,7 +103,7 @@ void mouseClicked() {
      }
    }
    else{
-     expand(mouseX/25,mouseY/25);
+     expandf(mouseX/25,mouseY/25);
    }
  }
 }
@@ -163,34 +163,34 @@ int flagsum(int x, int y){
 boolean isValid(int x,int y){
   return(x<20&&x>-1&&y<20&&y>-1);
 }
-void expand(int x,int y){
+void expandf(int x,int y){
  if(nums[x][y]==0&&x<20&&x>-1&&y<20&&y>-1){
    fill(255,0,0);
     rect((x)*25,(y)*25,25,25);
     open[x][y]=true;
     if(x<19&&!open[x+1][y]){
-      expand(x+1,y);
+      expandf(x+1,y);
     }
     if(x<19&&y>0&&!open[x+1][y-1]){
-      expand(x+1,y-1);
+      expandf(x+1,y-1);
     }
     if(x<19&&y<19&&!open[x+1][y+1]){
-      expand(x+1,y+1);
+      expandf(x+1,y+1);
     }
     if(y<19&&!open[x][y+1]){
-      expand(x,y+1);
+      expandf(x,y+1);
     }
     if(y>0&&!open[x][y-1]){
-      expand(x,y-1);
+      expandf(x,y-1);
     }
     if(x>0&&y>0&&!open[x-1][y-1]){
-      expand(x-1,y-1);
+      expandf(x-1,y-1);
     }
     if(x>0&&!open[x-1][y]){
-      expand(x-1,y);
+      expandf(x-1,y);
     }
     if(x>0&&y<19&&!open[x-1][y+1]){
-      expand(x-1,y+1);
+      expandf(x-1,y+1);
     }
  }
  else if(nums[x][y]!=0&&nums[x][y]!=9&&x<20&&x>-1&&y<20&&y>-1){
