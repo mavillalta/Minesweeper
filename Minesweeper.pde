@@ -131,6 +131,7 @@ else{
       }
 }
 }
+}
 
 int flagsum(int x, int y){
   int f=0;
