@@ -73,6 +73,7 @@ void mouseClicked() {
    //revealmines();
    fill(0,0,0);
    ellipse( (mouseX/25)*25+10,(mouseY/25)*25+10,10,10);
+}
  }
  else{
    if(nums[mouseX/25][mouseY/25]!=0){
