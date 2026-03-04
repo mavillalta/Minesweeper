@@ -1,4 +1,4 @@
-ArrayList<Integer> mines = new ArrayList();
+ArrayList <Integer> mines = new ArrayList();
 int[][] grid=new int[22][22];
 int[][] nums=new int[20][20];
 boolean[][] open= new boolean[20][20];
@@ -20,7 +20,7 @@ while(mines.size()<mine){
  if(!mines.contains(a))
    mines.add(a);
 }
-print(mines);
+
 for(int i=0;i<mine;i++){
    grid[mines.get(i)%20+1][mines.get(i)/20+1]=-1;
 }
@@ -59,22 +59,20 @@ for(int i=0;i<400;i++){
  ///text(nums[i%20][i/20],(i/20)*25+13,(i%20)*25+25);
  if(nums[i%20][i/20]==9){
    fill(0,0,0);
-  circle( (i/20)*25+10,(i%20)*25+10,10);
+  ellipse( (i/20)*25+10,(i%20)*25+10,10,10);
  }
 }
 }
 void mouseClicked() {
  if(mouseButton==LEFT){
    if(!flags[mouseX/25][mouseY/25]){
-  //print(" "+mouseX/25);
-  //print(" "+mouseY/25);
-  //System.out.println(" "+nums[mouseY/25][mouseX/25]);
+  
  if(nums[mouseX/25][mouseY/25]==9){
    text("game Over",100,100);
    
    //revealmines();
    fill(0,0,0);
-   circle( (mouseX/25)*25+10,(mouseY/25)*25+10,10);
+   ellipse( (mouseX/25)*25+10,(mouseY/25)*25+10,10,10);
  }
  else{
    if(nums[mouseX/25][mouseY/25]!=0){
@@ -203,6 +201,6 @@ void expandf(int x,int y){
    
    //revealmines();
    fill(0,0,0);
-   circle( (x)*25+10,(y)*25+10,10);
+   ellipse( (x)*25+10,(y)*25+10,10,10);
  }
 }
