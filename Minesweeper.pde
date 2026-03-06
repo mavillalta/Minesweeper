@@ -67,7 +67,7 @@ void mousePressed() {
      fill(255,0,0);
      rect((int)(mouseX/25)*25,(int)(mouseY/25)*25,25,25);
      fill(0,0,0);
-     text(nums[(int)(mouseX/25)][(int)(mouseY/25)],(mouseX/25)*25+10,(mouseY/25)*25+18);
+     text(nums[(int)(mouseX/25)][(int)(mouseY/25)],(int)(mouseX/25)*25+10,(int)(mouseY/25)*25+18);
      open[(int)(mouseX/25)][(int)(mouseY/25)]=true;
      }
    }
