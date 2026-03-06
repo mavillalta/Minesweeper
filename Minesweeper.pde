@@ -48,7 +48,7 @@ void mousePressed() {
  if(nums[(int)(mouseX/25)][(int)(mouseY/25)]==9){
    text("game Over",100,100);
    fill(0,0,0);
-  ellipse( (int)(mouseX/25)*25+15,(int)(mouseY/25)*25+15,10,10);
+  ellipse( (int)(mouseX/25)*25+12,(int)(mouseY/25)*25+12,10,10);
  }
  else{
    if(nums[(int)(mouseX/25)][(int)(mouseY/25)]!=0){
