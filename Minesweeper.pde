@@ -21,7 +21,7 @@ while(mines.size()<mine){
    mines.add(a);
 }
 for(int i=0;i<mine;i++){
-   grid[mines.get(i)%20+1][mines.get(i)/20+1]=-1;
+   grid[mines.get(i)%20+1][(int)(mines.get(i)/20)+1]=-1;
 }
 for(int i=0;i<20;i++){
  for(int j=0;j<20;j++){
