@@ -44,18 +44,18 @@ for(int i=0;i<521;i=i+25){
 }
 void mousePressed() {
  if(mouseButton==LEFT){
-   if(!flags[mouseX/25][mouseY/25]){
- if(nums[(int)mouseX/25][(int)mouseY/25]==9){
+   if(!flags[(int)(mouseX/25)][(int)(mouseY/25)]){
+ if(nums[(int)(mouseX/25)][(int)(mouseY/25)]==9){
    text("game Over",100,100);
    fill(0,0,0);
   ellipse( (mouseX/25)*25+10,(mouseY/25)*25+10,10,10);
  }
  else{
-   if(nums[mouseX/25][mouseY/25]!=0){
-     if(open[mouseX/25][mouseY/25]){
-       if(flagsum(mouseX/25,mouseY/25)==nums[mouseX/25][mouseY/25]){
-         for(int i=mouseX/25-1;i<mouseX/25+2;i++){
-            for(int j=mouseY/25-1;j<mouseY/25+2;j++){
+   if(nums[(int)(mouseX/25)][(int)(mouseY/25)]!=0){
+     if(open[(int)(mouseX/25)][(int)(mouseY/25)]){
+       if(flagsum((int)(mouseX/25),(int)(mouseY/25))==nums[(int)(mouseX/25)][(int)(mouseY/25)]){
+         for(int i=(int)(mouseX/25-1);i<(int)(mouseX/25+2);i++){
+            for(int j=(int)(mouseY/25-1);j<(int)(mouseY/25+2);j++){
               if(isValid(i,j)&&!flags[i][j]){
                 expandf(i,j);
               }
@@ -67,8 +67,8 @@ void mousePressed() {
      fill(255,0,0);
      rect((mouseX/25)*25,(mouseY/25)*25,25,25);
      fill(0,0,0);
-     text(nums[mouseX/25][mouseY/25],(mouseX/25)*25+10,(mouseY/25)*25+18);
-     open[mouseX/25][mouseY/25]=true;
+     text(nums[(int)(mouseX/25)][(int)(mouseY/25)],(mouseX/25)*25+10,(mouseY/25)*25+18);
+     open[(int)(mouseX/25)][(int)(mouseY/25)]=true;
      }
    }
    else{
@@ -78,16 +78,16 @@ void mousePressed() {
 }
  }
 else{
-  if(!flags[mouseX/25][mouseY/25]){
-  if(!open[mouseX/25][mouseY/25]){
-      open[mouseX/25][mouseY/25]=true;
+  if(!flags[(int)(mouseX/25)][(int)(mouseY/25)]){
+  if(!open[(int)(mouseX/25)][(int)(mouseY/25)]){
+      open[(int)(mouseX/25)][(int)(mouseY/25)]=true;
       fill(100,100,100);
       rect((mouseX/25)*25,(mouseY/25)*25,25,25);
       fill(0,255,0);
       text("F",(mouseX/25)*25+10,(mouseY/25)*25+17);
-      flags[mouseX/25][mouseY/25]=true;
+      flags[(int)(mouseX/25)][(int)(mouseY/25)]=true;
       flag++;
-      if(nums[mouseX/25][mouseY/25]==9){
+      if(nums[(int)(mouseX/25)][(int)(mouseY/25)]==9){
        gflag++;
        if(gflag==flag&&gflag==50){
         textSize(100);
@@ -97,13 +97,13 @@ else{
   }
 }
 else{
-  open[mouseX/25][mouseY/25]=false;
+  open[(int)(mouseX/25)][(int)(mouseY/25)]=false;
       fill(170,170,170);
       rect((mouseX/25)*25,(mouseY/25)*25,25,25);
 
-      flags[mouseX/25][mouseY/25]=false;
+      flags[(int)(mouseX/25)][(int)(mouseY/25)]=false;
       flag--;
-      if(nums[mouseX/25][mouseY/25]==9){
+      if(nums[(int)(mouseX/25)][(int)(mouseY/25)]==9){
        gflag--;
       
       }
