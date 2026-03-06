@@ -65,7 +65,7 @@ void mousePressed() {
      }
      else{
      fill(255,0,0);
-     rect((mouseX/25)*25,(mouseY/25)*25,25,25);
+     rect((int)(mouseX/25)*25,(int)(mouseY/25)*25,25,25);
      fill(0,0,0);
      text(nums[(int)(mouseX/25)][(int)(mouseY/25)],(mouseX/25)*25+10,(mouseY/25)*25+18);
      open[(int)(mouseX/25)][(int)(mouseY/25)]=true;
@@ -82,7 +82,7 @@ else{
   if(!open[(int)(mouseX/25)][(int)(mouseY/25)]){
       open[(int)(mouseX/25)][(int)(mouseY/25)]=true;
       fill(100,100,100);
-      rect((mouseX/25)*25,(mouseY/25)*25,25,25);
+      rect((int)(mouseX/25)*25,(int)(mouseY/25)*25,25,25);
       fill(0,255,0);
       text("F",(mouseX/25)*25+10,(mouseY/25)*25+17);
       flags[(int)(mouseX/25)][(int)(mouseY/25)]=true;
@@ -99,7 +99,7 @@ else{
 else{
   open[(int)(mouseX/25)][(int)(mouseY/25)]=false;
       fill(170,170,170);
-      rect((mouseX/25)*25,(mouseY/25)*25,25,25);
+      rect((int)(mouseX/25)*25,(int)(mouseY/25)*25,25,25);
 
       flags[(int)(mouseX/25)][(int)(mouseY/25)]=false;
       flag--;
