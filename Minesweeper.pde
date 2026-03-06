@@ -42,7 +42,7 @@ for(int i=0;i<521;i=i+25){
   line(i,0,i,521);
 }
 }
-void mouseClicked() {
+void mousePressed() {
  if(mouseButton==LEFT){
    if(!flags[mouseX/25][mouseY/25]){
  if(nums[mouseX/25][mouseY/25]==9){
