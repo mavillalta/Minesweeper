@@ -72,7 +72,7 @@ void mousePressed() {
      }
    }
    else{
-     expandf(mouseX/25,mouseY/25);
+     expandf((int)(mouseX/25),(int)(mouseY/25));
    }
  }
 }
