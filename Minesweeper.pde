@@ -84,7 +84,7 @@ else{
       fill(100,100,100);
       rect((int)(mouseX/25)*25,(int)(mouseY/25)*25,25,25);
       fill(0,255,0);
-      text("F",(mouseX/25)*25+10,(mouseY/25)*25+17);
+      text("F",(int)(mouseX/25)*25+10,(int)(mouseY/25)*25+17);
       flags[(int)(mouseX/25)][(int)(mouseY/25)]=true;
       flag++;
       if(nums[(int)(mouseX/25)][(int)(mouseY/25)]==9){
