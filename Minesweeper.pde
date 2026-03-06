@@ -6,7 +6,7 @@ boolean[][] flags= new boolean[20][20];
 int flag;
 int gflag;
 void setup(){
-  size(501,501);
+  size(500,500);
   background(170,170,170);
   for(int i=0;i<20;i++){
      for(int j=0;j<20;j++){
