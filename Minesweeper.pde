@@ -45,7 +45,7 @@ for(int i=0;i<521;i=i+25){
 void mousePressed() {
  if(mouseButton==LEFT){
    if(!flags[mouseX/25][mouseY/25]){
- if(nums[mouseX/25][mouseY/25]==9){
+ if(nums[(int)mouseX/25][(int)mouseY/25]==9){
    text("game Over",100,100);
    fill(0,0,0);
   ellipse( (mouseX/25)*25+10,(mouseY/25)*25+10,10,10);
