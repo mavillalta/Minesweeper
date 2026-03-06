@@ -1,4 +1,4 @@
-ArrayList <Integer> mines = new ArrayList();
+ArrayList<Integer> mines = new ArrayList();
 int[][] grid=new int[22][22];
 int[][] nums=new int[20][20];
 boolean[][] open= new boolean[20][20];
@@ -20,7 +20,6 @@ while(mines.size()<mine){
  if(!mines.contains(a))
    mines.add(a);
 }
-
 for(int i=0;i<mine;i++){
    grid[mines.get(i)%20+1][mines.get(i)/20+1]=-1;
 }
@@ -36,49 +35,32 @@ for(int i=0;i<20;i++){
    }
  }
 }
-
 }
-
 void draw(){
 for(int i=0;i<521;i=i+25){
   line(0,i,521,i);
   line(i,0,i,521);
 }
-for(int i=0;i<400;i++){
- if(nums[i%20][i/20]==9){
-   fill(0,0,0);
-  ellipse( (i/20)*25+10,(i%20)*25+10,10,10);
- }
 }
-}
-
 void mouseClicked() {
  if(mouseButton==LEFT){
    if(!flags[mouseX/25][mouseY/25]){
-  
  if(nums[mouseX/25][mouseY/25]==9){
    text("game Over",100,100);
-   
-   //revealmines();
    fill(0,0,0);
-   ellipse( (mouseX/25)*25+10,(mouseY/25)*25+10,10,10);
-}
+  ellipse( (mouseX/25)*25+10,(mouseY/25)*25+10,10,10);
  }
  else{
    if(nums[mouseX/25][mouseY/25]!=0){
      if(open[mouseX/25][mouseY/25]){
-       
        if(flagsum(mouseX/25,mouseY/25)==nums[mouseX/25][mouseY/25]){
-         
          for(int i=mouseX/25-1;i<mouseX/25+2;i++){
             for(int j=mouseY/25-1;j<mouseY/25+2;j++){
               if(isValid(i,j)&&!flags[i][j]){
-                
                 expandf(i,j);
               }
             }
          }
-         
        }
      }
      else{
@@ -103,18 +85,14 @@ else{
       rect((mouseX/25)*25,(mouseY/25)*25,25,25);
       fill(0,255,0);
       text("F",(mouseX/25)*25+10,(mouseY/25)*25+17);
-     
       flags[mouseX/25][mouseY/25]=true;
       flag++;
       if(nums[mouseX/25][mouseY/25]==9){
        gflag++;
-       
        if(gflag==flag&&gflag==50){
-         
         textSize(100);
         text("good job",100,100);
        }
-       
       }
   }
 }
@@ -122,17 +100,16 @@ else{
   open[mouseX/25][mouseY/25]=false;
       fill(170,170,170);
       rect((mouseX/25)*25,(mouseY/25)*25,25,25);
-      
+
       flags[mouseX/25][mouseY/25]=false;
       flag--;
       if(nums[mouseX/25][mouseY/25]==9){
        gflag--;
-       
+      
       }
 }
 }
 }
-
 int flagsum(int x, int y){
   int f=0;
   for(int i=x-1;i<x+2;i++){
@@ -184,13 +161,10 @@ void expandf(int x,int y){
     rect((x)*25,(y)*25,25,25);
     fill(255,255,255);
     text(nums[x][y],x*25+10,y*25+18);
-    
     open[x][y]=true; 
  }
  else if(isValid(x,y)&&nums[x][y]==9){
    text("game Over",100,100);
-   
-   //revealmines();
    fill(0,0,0);
    ellipse( (x)*25+10,(y)*25+10,10,10);
  }
